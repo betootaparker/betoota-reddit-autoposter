@@ -20,37 +20,11 @@
         "location": "post",
         "forUserType": "moderator",
         "endpoint": "/internal/menu/mop-post"
+      },
+      {
+        "label": "Test RSS Check",
+        "description": "Manually check the RSS feed and post new items now",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/test-rss-check"
       }
-    ]
-  },
-  "forms": {
-    "mopComment": "/internal/form/mop-comment-submit",
-    "mopPost": "/internal/form/mop-post-submit"
-  },
-  "triggers": {
-    "onAppInstall": "/internal/triggers/on-app-install"
-  },
-  "scheduler": {
-    "tasks": {
-      "check-rss-feed": {
-        "endpoint": "/internal/cron/check-feed",
-        "cron": "*/30 * * * *"
-      }
-    }
-  },
-  "scripts": {
-    "build": "vite build",
-    "dev": "vite build --watch"
-  },
-  "permissions": {
-    "reddit": {
-      "enable": true,
-      "asUser": ["SUBMIT_POST"]
-    },
-    "redis": true,
-    "http": {
-      "enable": true,
-      "domains": ["www.betootaadvocate.com"]
-    }
-  }
-}
